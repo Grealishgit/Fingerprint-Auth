@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { Platform, StyleSheet, View, Switch, Alert, TouchableOpacity } from 'react-native';
 import { useAuth } from '@/contexts/auth-context';
 import { ThemedText } from '@/components/themed-text';
@@ -15,6 +15,9 @@ export default function Settings() {
     disableBiometric,
     authenticateWithBiometric
   } = useAuth();
+  const currentTime = new Date();
+
+
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -127,6 +130,9 @@ export default function Settings() {
 
         <ThemedView style={styles.infoRow}>
           <ThemedText type="default">Platform: {Platform.OS}</ThemedText>
+        </ThemedView>
+        <ThemedView style={styles.infoRow}>
+          <ThemedText type="default">Current Time: {currentTime.toLocaleTimeString()}</ThemedText>
         </ThemedView>
 
         <ThemedView style={styles.infoRow}>
