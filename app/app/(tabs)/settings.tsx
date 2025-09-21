@@ -5,6 +5,7 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { IconSymbol } from '@/components/ui/icon-symbol';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function Settings() {
   const {
@@ -80,12 +81,12 @@ export default function Settings() {
 
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
+      headerBackgroundColor={{ light: '#A1CEDC', dark: '#15466eff' }}
       headerImage={
-        <IconSymbol
-          size={310}
+        <MaterialCommunityIcons
+          size={210}
           color="#808080"
-          name="gear"
+          name="application-braces-outline"
           style={styles.headerImage}
         />
       }>
@@ -154,8 +155,9 @@ export default function Settings() {
 const styles = StyleSheet.create({
   headerImage: {
     color: '#808080',
-    bottom: -90,
-    left: -35,
+    top: 35,
+    left: '50%',
+    transform: [{ translateX: -105 }],
     position: 'absolute',
   },
   titleContainer: {
