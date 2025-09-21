@@ -89,7 +89,7 @@ export default function HomeScreen() {
       }>
 
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome Back 🎉 Hunter</ThemedText>
+        <ThemedText type="title">Welcome Back <ThemedText type="title" style={styles.highlightedText}>Hunter</ThemedText> 🎉</ThemedText>
       </ThemedView>
 
       <ThemedView style={styles.greetingContainer}>
@@ -281,5 +281,9 @@ const styles = StyleSheet.create({
   statText: {
     flex: 1,
     fontSize: 14,
+  },
+  highlightedText: {
+    color: '#2196F3',
+    fontWeight: 'bold',
   },
 });
