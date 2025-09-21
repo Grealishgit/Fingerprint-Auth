@@ -52,6 +52,14 @@ export default function HomeScreen() {
 
   const getGreeting = () => {
     const hour = currentTime.getHours();
+    console.log("Current Hour:", hour);
+
+    const minute = currentTime.getMinutes();
+    console.log("Current Minute:", minute);
+
+    const second = currentTime.getSeconds();
+    console.log("Current Second:", second);
+
 
     if (hour >= 5 && hour < 12) {
       return 'Good Morning! ☀️';
@@ -198,8 +206,10 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   timeText: {
-    fontSize: 16,
-    opacity: 0.7,
+    fontSize: 30,
+    // opacity: 0.7,
+    fontWeight: '600',
+    color: '#2196F3'
   },
   countdownContainer: {
     marginBottom: 32,
